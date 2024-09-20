@@ -11,11 +11,12 @@ const randomChoice = getComputerChoice(picks);
 
 console.log(randomChoice);
 
+
 // user selection logic 
 
 function getHumanChoice () {
     let choice = prompt("Make a Choice. Rock, Paper or Scissors");
-    console.log(choice)
+  
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
         console.log(choice)
         return alert("Choice Accepted");
@@ -77,10 +78,10 @@ function playRound(humanChoice, computerChoice) {
  
   
   
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
+//   const humanSelection = getHumanChoice();
+//   const computerSelection = getComputerChoice();
   
-  playRound(humanSelection, computerSelection);
+//   playRound(humanSelection, computerSelection);
   
 
 // function getMyChoice () {
