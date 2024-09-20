@@ -1,3 +1,5 @@
+// computer logic
+
 function getComputerChoice (arr) {
     const randomSelection = Math.floor(Math.random() * arr.length); 
     return arr[randomSelection];
@@ -9,8 +11,9 @@ const randomChoice = getComputerChoice(picks);
 
 console.log(randomChoice);
 
+// user selection logic 
 
-function getMyChoice () {
+function getHumanChoice () {
     let choice = prompt("Make a Choice. Rock, Paper or Scissors");
     console.log(choice)
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
@@ -18,14 +21,67 @@ function getMyChoice () {
         return alert("Choice Accepted");
     } else {
         alert("Invalid Choice. Try Again!");
-        return getMyChoice();
+        return getHumanChoice();
 
     }
     console.log(choice);
 
 }
-getMyChoice();
+getHumanChoice();
 
+// score logic
+
+function keepScore () {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    if (humanScore === 5) {
+        return "You Wins";
+    }
+
+    if (computerScore === 5) {
+        return "Computer Wins";
+    }
+}
+
+// game play logic
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        alert ("Draw! Replay Round!");
+    }
+    if (humanChoice === "rock" > computerChoice === "scissors") {
+        alert ("rock beats scissors. You get 1 point");
+    } else {
+       if (humanChoice === "scissors" < computerChoice === "rock") {
+        alert ("rock beats scissors. Computer gets 1 point");
+    }
+    if (humanChoice === "scissors" > computerChoice === "paper" ) {
+        alert ("scissors beats paper. You get 1 point");
+    } else {
+        if (humanChoice === "paper" < computerChoice === "scissors") {
+            alert ("scissors beats paper. Computer gets 1 point");
+        }
+    if (humanChoice === "paper" > computerChoice === "rock") {
+        alert ("paper beats rock. Computer gets 1 point");
+    } else {
+        if (humanChoice === "rock" < computerChoice === "paper") {
+            alert ("paper beats rock. Computer gets 1 point");
+        }
+    }
+}
+    }
+            
+
+}
+ 
+  
+  
+  const humanSelection = getHumanChoice();
+  const computerSelection = getComputerChoice();
+  
+  playRound(humanSelection, computerSelection);
+  
 
 // function getMyChoice () {
 //     let selection = ["rock", "paper", "scissors"];
