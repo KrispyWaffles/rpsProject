@@ -6,29 +6,33 @@ function getComputerChoice (arr) {
 }
 
 const picks = ["rock", "paper", "scissors"];
-const randomChoice = getComputerChoice(picks);
+let computerChoice = getComputerChoice(picks);
 
 
-console.log(randomChoice);
+// console.log(computerChoice);
 
 
 // user selection logic 
 
 function getHumanChoice () {
-    let choice = prompt("Make a Choice. Rock, Paper or Scissors");
+    let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
   
-    if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        console.log(choice)
-        return alert("Choice Accepted");
+    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+        alert("Choice Accepted");
+        return humanChoice;
     } else {
         alert("Invalid Choice. Try Again!");
         return getHumanChoice();
 
     }
-    console.log(choice);
+
+
+    console.log(humanChoice);
 
 }
-getHumanChoice();
+const humanChoice = getHumanChoice();
+
+
 
 // score logic
 
@@ -51,37 +55,38 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         alert ("Draw! Replay Round!");
     }
-    if (humanChoice === "rock" > computerChoice === "scissors") {
+    if (humanChoice === "rock" && computerChoice === "scissors") {
         alert ("rock beats scissors. You get 1 point");
     } else {
-       if (humanChoice === "scissors" < computerChoice === "rock") {
+       if (humanChoice === "scissors" && computerChoice === "rock") {
         alert ("rock beats scissors. Computer gets 1 point");
     }
-    if (humanChoice === "scissors" > computerChoice === "paper" ) {
+    if (humanChoice === "scissors" && computerChoice === "paper" ) {
         alert ("scissors beats paper. You get 1 point");
     } else {
-        if (humanChoice === "paper" < computerChoice === "scissors") {
+        if (humanChoice === "paper" && computerChoice === "scissors") {
             alert ("scissors beats paper. Computer gets 1 point");
         }
-    if (humanChoice === "paper" > computerChoice === "rock") {
+    if (humanChoice === "paper" && computerChoice === "rock") {
         alert ("paper beats rock. Computer gets 1 point");
     } else {
-        if (humanChoice === "rock" < computerChoice === "paper") {
+        if (humanChoice === "rock" && computerChoice === "paper") {
             alert ("paper beats rock. Computer gets 1 point");
         }
     }
 }
     }
-            
+    console.log("Human choice: " + humanChoice);
+    console.log("Computer choice: " + computerChoice);
+         
 
 }
- 
+
   
   
-//   const humanSelection = getHumanChoice();
-//   const computerSelection = getComputerChoice();
+
   
-//   playRound(humanSelection, computerSelection);
+  playRound(humanChoice, computerChoice);
   
 
 // function getMyChoice () {
