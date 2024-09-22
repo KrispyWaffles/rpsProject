@@ -41,7 +41,7 @@ function keepScore () {
     let computerScore = 0;
 
     if (humanScore === 5) {
-        return "You Wins";
+        return "You Win";
     }
 
     if (computerScore === 5) {
@@ -52,26 +52,34 @@ function keepScore () {
 // game play logic
 
 function playRound(humanChoice, computerChoice) {
+    
     if (humanChoice === computerChoice) {
         alert ("Draw! Replay Round!");
+        return;
     }
     if (humanChoice === "rock" && computerChoice === "scissors") {
         alert ("rock beats scissors. You get 1 point");
+            return humanScore = 1;
     } else {
        if (humanChoice === "scissors" && computerChoice === "rock") {
         alert ("rock beats scissors. Computer gets 1 point");
+            return computerScore = 1;
     }
     if (humanChoice === "scissors" && computerChoice === "paper" ) {
         alert ("scissors beats paper. You get 1 point");
+            return humanScore = 1;
     } else {
         if (humanChoice === "paper" && computerChoice === "scissors") {
             alert ("scissors beats paper. Computer gets 1 point");
+            return computerScore = 1;
         }
     if (humanChoice === "paper" && computerChoice === "rock") {
         alert ("paper beats rock. Computer gets 1 point");
+            return humanScore = 1;
     } else {
         if (humanChoice === "rock" && computerChoice === "paper") {
             alert ("paper beats rock. Computer gets 1 point");
+            return computerScore = 1;
         }
     }
 }
@@ -87,6 +95,8 @@ function playRound(humanChoice, computerChoice) {
 
   
   playRound(humanChoice, computerChoice);
+
+  keepScore();
   
 
 // function getMyChoice () {
