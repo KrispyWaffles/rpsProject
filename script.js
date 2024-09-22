@@ -1,12 +1,15 @@
 // computer logic
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice (arr) {
     const randomSelection = Math.floor(Math.random() * arr.length); 
     return arr[randomSelection];
 }
 
 const picks = ["rock", "paper", "scissors"];
-let computerChoice = getComputerChoice(picks);
+// let computerChoice = getComputerChoice(picks);
 
 
 // console.log(computerChoice);
@@ -18,11 +21,12 @@ function getHumanChoice () {
     let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
   
     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+        console.log(humanChoice);
         alert("Choice Accepted");
         return humanChoice;
     } else {
         alert("Invalid Choice. Try Again!");
-        return getHumanChoice();
+        return getHumanChoice(); // loops for invalid choice
 
     }
 
