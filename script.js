@@ -80,18 +80,21 @@ function playRound(humanChoice, computerChoice) {
         // return;
     }
 
-    // console.log(humanChoice);
-    // console.log(computerChoice);
- 
+    
+
 
     while (humanScore < 5 && computerScore < 5) {
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice(picks);  
     playRound(humanChoice, computerChoice);
-    }
-       console.log(humanScore);
-    console.log(computerScore);
 
+
+    console.log(humanChoice);
+    console.log(computerChoice);
+    console.log(humanScore);
+    console.log(computerScore);
+    }
+    
     // score logic
 
 // function keepScore () {
