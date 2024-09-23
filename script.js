@@ -1,4 +1,4 @@
-// computer logic
+// COMPUTER LOGIC
 
 let humanScore = 0;
 let computerScore = 0;
@@ -15,7 +15,7 @@ const picks = ["rock", "paper", "scissors"];
 // console.log(computerChoice);
 
 
-// user selection logic 
+// USER SELECTION LOGIC
 
 function getHumanChoice () {
     let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
@@ -33,10 +33,7 @@ function getHumanChoice () {
 
 }
 
-
-
-
-// game play logic
+// GAME PLAY LOGIC
 
 function playRound(humanChoice, computerChoice) {
     
@@ -44,7 +41,7 @@ function playRound(humanChoice, computerChoice) {
         alert ("Draw! Replay Round!");
         return;
     }
-    // rock vs scissors
+    // ROCK VS SCISSORS
     if (humanChoice === "rock" && computerChoice === "scissors") {
         alert ("rock beats scissors. You get 1 point");
         humanScore++;
@@ -52,7 +49,7 @@ function playRound(humanChoice, computerChoice) {
         alert ("rock beats scissors. Computer gets 1 point");
         computerScore++;
 
-    // scissors vs paper
+    // SCISSORS VS PAPER
     } else if (humanChoice === "scissors" && computerChoice === "paper" ) {
         alert ("scissors beats paper. You get 1 point");
         humanScore++;
@@ -60,7 +57,7 @@ function playRound(humanChoice, computerChoice) {
             alert ("scissors beats paper. Computer gets 1 point");
         computerScore++;
 
-    // paper vs rock 
+    // PAPER VS ROCK
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         alert ("paper beats rock. Computer gets 1 point");
         humanScore++;
@@ -71,7 +68,7 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-    // win or lose check 
+    // WIN OR LOSE CHECK
     if (humanScore === 5) {
         alert("You win!");
         // return;
