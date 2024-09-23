@@ -19,7 +19,9 @@ const picks = ["rock", "paper", "scissors"];
 
 function getHumanChoice () {
     let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
-  
+// removed case sensitivity
+    humanChoice = humanChoice.toLowerCase();
+
     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
         console.log(humanChoice);
         alert("Choice Accepted");
@@ -76,8 +78,6 @@ function playRound(humanChoice, computerChoice) {
         alert("Game over. Computer wins!");
         // return;
     }
-
-    
 
 
     while (humanScore < 5 && computerScore < 5) {
