@@ -121,7 +121,11 @@ function playRound(humanChoice, computerChoice) {
 
     playRound(humanChoice, computerChoice);
     
-
+    console.log(humanChoice);
+    console.log(computerChoice);
+    console.log(humanScore);
+    console.log(computerScore);
+    console.log(roundNumber);
     
 
     // Check each round if game has been won
@@ -133,11 +137,7 @@ function playRound(humanChoice, computerChoice) {
     console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
 
 }
-    console.log(humanChoice);
-    console.log(computerChoice);
-    console.log(humanScore);
-    console.log(computerScore);
-    console.log(roundNumber);
+    
     
     // score logic
 
