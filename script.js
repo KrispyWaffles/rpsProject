@@ -117,23 +117,27 @@ function playRound(humanChoice, computerChoice) {
     while (humanScore < 5 && computerScore < 5) {
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice(picks);
-    // let roundNumber = roundTracker(5);  
-    playRound(humanChoice, computerChoice);
-    }
+    // let roundNumber = roundTracker(5); 
 
-    console.log(humanChoice);
-    console.log(computerChoice);
-    console.log(humanScore);
-    console.log(computerScore);
-    console.log(roundNumber);
+    playRound(humanChoice, computerChoice);
+    
+
+    
 
     // Check each round if game has been won
     if (checkGameWin()) {
         break; // stop game computer or human has won
     }
 
+
     console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
 
+}
+    console.log(humanChoice);
+    console.log(computerChoice);
+    console.log(humanScore);
+    console.log(computerScore);
+    console.log(roundNumber);
     
     // score logic
 
