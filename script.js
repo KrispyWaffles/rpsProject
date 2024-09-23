@@ -75,34 +75,41 @@ function playRound(humanChoice, computerChoice) {
         
         }
 
-
+    }
 
     // Check win for each round
-    if (humanScore === 1 || humanScore < 5) {
-        alert(`You win Round: ${roundNumber}`);
-        // return;
-    } else { 
-        (computerScore === 1 || computerScore < 5) 
-        alert(`The computer wins Round: ${roundNumber}`);
-        // return;
-    }
+    // if (humanScore === 1 || humanScore < 5) {
+    //     alert(`You win Round: ${roundNumber}`);
+    //     // return;
+    // } else { 
+    //     (computerScore === 1 || computerScore < 5) 
+    //     alert(`The computer wins Round: ${roundNumber}`);
+    //     // return;
+    // }
+   
+   
     // Game win check
+  
+    function checkGameWin() {
     if (humanScore === 5) {
-        alert(`Congratulations! You won the game! Total Rounds: ${roundNumber}`)
-    } else { 
-        (computerScore === 5) 
-        alert(`Game over! Computer wins the game! Total Rounds: ${roundNumber}`)
-        }
+        alert(`Congratulations! You won the game! Total Rounds: ${roundNumber}`);
+        return true;
+    } else if  (computerScore === 5) {
+        alert(`Game over! Computer wins the game! Total Rounds: ${roundNumber}`);
+        return true;
+    }
+    return false;
+}
 
-    }
     
-    function roundTracker (humanScore, computerScore) {
-        let roundNumber = rounds.length +1;
+    
+    // function roundTracker (humanScore, computerScore) {
+    //     let roundNumber = rounds.length +1;
         
-        if (humanScore > computerScore || humanScore < computerScore) {
-            roundNumber++;
-        }
-    }
+    //     if (humanScore > computerScore || humanScore < computerScore) {
+    //         roundNumber++;
+    //     }
+    // }
 
 
 
@@ -112,14 +119,21 @@ function playRound(humanChoice, computerChoice) {
     let computerChoice = getComputerChoice(picks);
     // let roundNumber = roundTracker(5);  
     playRound(humanChoice, computerChoice);
-
+    }
 
     console.log(humanChoice);
     console.log(computerChoice);
     console.log(humanScore);
     console.log(computerScore);
     console.log(roundNumber);
+
+    // Check each round if game has been won
+    if (checkGameWin()) {
+        break; // stop game computer or human has won
     }
+
+    console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
+
     
     // score logic
 
