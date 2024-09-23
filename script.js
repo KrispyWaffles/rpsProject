@@ -29,21 +29,19 @@ function getHumanChoice () {
         return getHumanChoice(); // loops for invalid choice
 
     }
-
-
-    console.log(humanChoice);
+   
 
 }
-const humanChoice = getHumanChoice();
+
 
 
 
 // score logic
 
 function keepScore () {
-    let humanScore = 0;
-    let computerScore = 0;
-
+    // let humanScore = 0;
+    // let computerScore = 0;
+s
     if (humanScore === 5) {
         return "You Win";
     }
@@ -95,12 +93,13 @@ function playRound(humanChoice, computerChoice) {
 }
 
   
-  
+  let humanChoice = getHumanChoice();
+  let computerChoice = getcomputerChoice(picks);
 
   
   playRound(humanChoice, computerChoice);
 
-  keepScore();
+//   keepScore();
   
 
 // function getMyChoice () {
