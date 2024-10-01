@@ -33,10 +33,40 @@ document.body.appendChild(startGame);
 
 startGame.addEventListener("click", displayText);
 
-function displayText() {
-    document.getElementById("start").textContent = "Make a Selection";
-}
+rockOption.addEventListener("click", function() { 
+    getHumanChoice('rock');
+});
 
+paperOption.addEventListener("click", function() {
+    getHumanChoice('paper');
+});
+
+scissorsOption.addEventListener("click", function() {
+    getHumanChoice('scissors');
+})
+
+
+
+
+
+
+function getHumanChoice () {
+    document.getElementById("gameflow").textContent = "Cho";
+// removed case sensitivity for user choice
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors') {
+        console.log(humanChoice);
+        alert("Choice Accepted");
+        return humanChoice;
+    } else {
+        alert("Invalid Choice. Try Again!");
+        return getHumanChoice(); // loops for invalid choice
+
+    }
+   
+
+}
 
 // USER SELECTION LOGIC
 
