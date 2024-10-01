@@ -13,28 +13,48 @@ const picks = ["rock", "paper", "scissors"];
 // let computerChoice = getComputerChoice(picks);
 
 
-// console.log(computerChoice);
+// button start game and rps seclection
+
+let rockOption = document.createElement('button');
+rockOption.textContent = 'rock';
+document.body.appendChild(rockOption);
+
+let paperOption = document.createElement('button');
+paperOption.textContent = 'paper';
+document.body.appendChild(paperOption);
+
+let scissorsOption = document.createElement('button');
+scissorsOption.textContent = 'scissors';
+document.body.appendChild(scissorsOption);
+
+let startGame = document.createElement('button');
+startGame.textContent = 'Start Game';
+document.body.appendChild(startGame); 
+
+
 
 
 // USER SELECTION LOGIC
 
-function getHumanChoice () {
-    let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
-// removed case sensitivity for user choice
-    humanChoice = humanChoice.toLowerCase();
+// function getHumanChoice () {
+//     let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
+// // removed case sensitivity for user choice
+//     humanChoice = humanChoice.toLowerCase();
 
-    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-        console.log(humanChoice);
-        alert("Choice Accepted");
-        return humanChoice;
-    } else {
-        alert("Invalid Choice. Try Again!");
-        return getHumanChoice(); // loops for invalid choice
+//     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+//         console.log(humanChoice);
+//         alert("Choice Accepted");
+//         return humanChoice;
+//     } else {
+//         alert("Invalid Choice. Try Again!");
+//         return getHumanChoice(); // loops for invalid choice
 
-    }
+//     }
    
 
-}
+// }
+
+
 
 
 
