@@ -1,3 +1,5 @@
+
+
 // COMPUTER LOGIC
 
 let humanScore = 0;
@@ -26,6 +28,8 @@ document.body.appendChild(paperOption);
 let scissorsOption = document.createElement('button');
 scissorsOption.textContent = 'scissors';
 document.body.appendChild(scissorsOption);
+
+button.classList.add('button');
 
 rockOption.addEventListener("click", function() { 
     getHumanChoice('rock');
