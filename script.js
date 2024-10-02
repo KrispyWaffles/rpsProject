@@ -52,64 +52,40 @@ function getHumanChoice (choice) {
 
 }
 
-// USER SELECTION LOGIC
-
-// function getHumanChoice () {
-//     let humanChoice = prompt("Make a Choice. Rock, Paper or Scissors");
-// // removed case sensitivity for user choice
-//     humanChoice = humanChoice.toLowerCase();
-
-//     if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-//         console.log(humanChoice);
-//         alert("Choice Accepted");
-//         return humanChoice;
-//     } else {
-//         alert("Invalid Choice. Try Again!");
-//         return getHumanChoice(); // loops for invalid choice
-
-//     }
-   
-
-// }
-
-
-
-
-
 // GAME PLAY LOGIC
 
-function playRound(humanChoice, computerChoice) {
+function playRound(choice, computerChoice) {
     roundNumber++;
     console.log(`Round ${roundNumber}`);
-    alert(`Round ${roundNumber}`);
+    document.getElementById("gameflow").textContent = (`Round ${roundNumber}`);
 
-    if (humanChoice === computerChoice) {
-        alert (`Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`);
+    if (choice === computerChoice) {
+        document.getElementById("gameflow").textContent = (`Choice Accepted Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`)
         return;
     }
     // ROCK VS SCISSORS
-    if (humanChoice === "rock" && computerChoice === "scissors") {
+    if (choice === "rock" && computerChoice === "scissors") {
         humanScore++;
-            alert (`rock beats scissors. You get 1 point. Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        document.getElementById("gameflow").textContent = (`rock beats scissors. You get 1 point. Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (choice === "scissors" && computerChoice === "rock") {
         computerScore++;
-             alert (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+             alertdocument.getElementById("gameflow").textContent = (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
 
     // SCISSORS VS PAPER
-    } else if (humanChoice === "scissors" && computerChoice === "paper" ) {
+    } else if (choice === "scissors" && computerChoice === "paper" ) {
         humanScore++;
-            alert (`scissors beats paper. You get 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        document.getElementById("gameflow").textContent = (`scissors beats paper. You get 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (choice === "paper" && computerChoice === "scissors") {
         computerScore++;
-            alert (`scissors beats paper. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+        document.getElementById("gameflow").textContent = (`scissors beats paper. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
         
     // PAPER VS ROCK
-    } else if (humanChoice === "paper" && computerChoice === "rock") {
+    } else if (choice === "paper" && computerChoice === "rock") {
         humanScore++;
-            alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-    } else if (humanChoice === "rock" && computerChoice === "paper") {
+        document.getElementById("gameflow").textContent = (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (choice === "rock" && computerChoice === "paper") {
         computerScore++;
-            alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+        document.getElementById("gameflow").textContent = (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
         
         }
 
@@ -117,11 +93,11 @@ function playRound(humanChoice, computerChoice) {
 
     // Check win for each round
     if (humanScore === 1 || humanScore < 5) {
-        alert(`You win Round: ${roundNumber}`);
+        document.getElementById("gameflow").textContent = (`You win Round: ${roundNumber}`);
         // return;
     } else { 
         (computerScore === 1 || computerScore < 5) 
-        alert(`The computer wins Round: ${roundNumber}`);
+        document.getElementById("gameflow").textContent = (`The computer wins Round: ${roundNumber}`);
         // return;
     }
    
@@ -130,36 +106,23 @@ function playRound(humanChoice, computerChoice) {
   
     function checkGameWin() {
     if (humanScore === 5) {
-        alert(`Congratulations! You won the game! Total Rounds: ${roundNumber}`);
+        document.getElementById("gameflow").textContent = (`Congratulations! You won the game! Total Rounds: ${roundNumber}`);
         return true;
     } else if  (computerScore === 5) {
-        alert(`Game over! Computer wins the game! Total Rounds: ${roundNumber}`);
+        document.getElementById("gameflow").textContent = (`Game over! Computer wins the game! Total Rounds: ${roundNumber}`);
         return true;
     }
     return false;
 }
 
-    
-    
-    // function roundTracker (humanScore, computerScore) {
-    //     let roundNumber = rounds.length +1;
-        
-    //     if (humanScore > computerScore || humanScore < computerScore) {
-    //         roundNumber++;
-    //     }
-    // }
-
-
-
-
     while (humanScore < 5 && computerScore < 5) {
-    let humanChoice = getHumanChoice();
+    let choice = getHumanChoice();
     let computerChoice = getComputerChoice(picks);
     // let roundNumber = roundTracker(5); 
 
-    playRound(humanChoice, computerChoice);
+    playRound(choice, computerChoice);
     
-    console.log(humanChoice);
+    console.log(choice);
     console.log(computerChoice);
     console.log(humanScore);
     console.log(computerScore);
