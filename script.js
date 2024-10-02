@@ -27,12 +27,6 @@ let scissorsOption = document.createElement('button');
 scissorsOption.textContent = 'scissors';
 document.body.appendChild(scissorsOption);
 
-let startGame = document.createElement('button');
-startGame.textContent = 'Start Game';
-document.body.appendChild(startGame); 
-
-startGame.addEventListener("click", displayText);
-
 rockOption.addEventListener("click", function() { 
     getHumanChoice('rock');
 });
@@ -46,22 +40,12 @@ scissorsOption.addEventListener("click", function() {
 })
 
 
-
-
-
-
-function getHumanChoice () {
-    document.getElementById("gameflow").textContent = "Cho";
-// removed case sensitivity for user choice
-    humanChoice = humanChoice.toLowerCase();
-
-    if (humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors') {
-        console.log(humanChoice);
-        alert("Choice Accepted");
-        return humanChoice;
-    } else {
-        alert("Invalid Choice. Try Again!");
-        return getHumanChoice(); // loops for invalid choice
+function getHumanChoice (choice) {
+    if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
+        console.log(choice);
+        // alert("Choice Accepted");
+        document.getElementById("gameflow").textContent = "Choice Accepted";
+        return choice;
 
     }
    
@@ -94,52 +78,52 @@ function getHumanChoice () {
 
 // GAME PLAY LOGIC
 
-// function playRound(humanChoice, computerChoice) {
-//     roundNumber++;
-//     console.log(`Round ${roundNumber}`);
-//     alert(`Round ${roundNumber}`);
+function playRound(humanChoice, computerChoice) {
+    roundNumber++;
+    console.log(`Round ${roundNumber}`);
+    alert(`Round ${roundNumber}`);
 
-//     if (humanChoice === computerChoice) {
-//         alert (`Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`);
-//         return;
-//     }
-//     // ROCK VS SCISSORS
-//     if (humanChoice === "rock" && computerChoice === "scissors") {
-//         humanScore++;
-//             alert (`rock beats scissors. You get 1 point. Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-//     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-//         computerScore++;
-//              alert (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    if (humanChoice === computerChoice) {
+        alert (`Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`);
+        return;
+    }
+    // ROCK VS SCISSORS
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+        humanScore++;
+            alert (`rock beats scissors. You get 1 point. Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        computerScore++;
+             alert (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
 
-//     // SCISSORS VS PAPER
-//     } else if (humanChoice === "scissors" && computerChoice === "paper" ) {
-//         humanScore++;
-//             alert (`scissors beats paper. You get 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-//     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-//         computerScore++;
-//             alert (`scissors beats paper. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    // SCISSORS VS PAPER
+    } else if (humanChoice === "scissors" && computerChoice === "paper" ) {
+        humanScore++;
+            alert (`scissors beats paper. You get 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        computerScore++;
+            alert (`scissors beats paper. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
         
-//     // PAPER VS ROCK
-//     } else if (humanChoice === "paper" && computerChoice === "rock") {
-//         humanScore++;
-//             alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
-//     } else if (humanChoice === "rock" && computerChoice === "paper") {
-//         computerScore++;
-//             alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    // PAPER VS ROCK
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
+        humanScore++;
+            alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+    } else if (humanChoice === "rock" && computerChoice === "paper") {
+        computerScore++;
+            alert (`paper beats rock. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
         
-//         }
+        }
 
-//     }
+    }
 
     // Check win for each round
-    // if (humanScore === 1 || humanScore < 5) {
-    //     alert(`You win Round: ${roundNumber}`);
-    //     // return;
-    // } else { 
-    //     (computerScore === 1 || computerScore < 5) 
-    //     alert(`The computer wins Round: ${roundNumber}`);
-    //     // return;
-    // }
+    if (humanScore === 1 || humanScore < 5) {
+        alert(`You win Round: ${roundNumber}`);
+        // return;
+    } else { 
+        (computerScore === 1 || computerScore < 5) 
+        alert(`The computer wins Round: ${roundNumber}`);
+        // return;
+    }
    
    
     // Game win check
