@@ -29,7 +29,9 @@ let scissorsOption = document.createElement('button');
 scissorsOption.textContent = 'scissors';
 document.body.appendChild(scissorsOption);
 
-button.classList.add('button');
+rockOption.classList.add('button');
+paperOption.classList.add('button');
+scissorsOption.classList.add('button');
 
 rockOption.addEventListener("click", function() { 
     getHumanChoice('rock');
@@ -41,7 +43,7 @@ paperOption.addEventListener("click", function() {
 
 scissorsOption.addEventListener("click", function() {
     getHumanChoice('scissors');
-})
+});
 
 
 function getHumanChoice (choice) {
@@ -119,12 +121,12 @@ function playRound(choice, computerChoice) {
     return false;
 }
 
-    while (humanScore < 5 && computerScore < 5) {
-    let choice = getHumanChoice();
-    let computerChoice = getComputerChoice(picks);
-    // let roundNumber = roundTracker(5); 
+    // while (humanScore < 5 && computerScore < 5) {
+    // let choice = getHumanChoice();
+    // let computerChoice = getComputerChoice(picks);
+    // // let roundNumber = roundTracker(5); 
 
-    playRound(choice, computerChoice);
+    // playRound(choice, computerChoice);
     
     console.log(choice);
     console.log(computerChoice);
@@ -134,14 +136,14 @@ function playRound(choice, computerChoice) {
     
 
     // Check each round if game has been won
-    if (checkGameWin()) {
-        break; // stop game computer or human has won
-    }
+    // if (checkGameWin()) {
+    //     break; // stop game computer or human has won
+    // }
 
 
     console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
 
-}
+
     
     
     // score logic
