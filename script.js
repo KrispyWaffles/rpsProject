@@ -6,13 +6,21 @@ let humanScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
 
+let startGame = document.createElement('button')
+startGame.textContent = 'start';
+document.body.appendChild(startGame);
+
+startGame.addEventListener("click", function() {
+    document.getElementById("gameflow").textContent = "Game Started!";
+
+});
+
+const picks = ["rock", "paper", "scissors"];
+
 function getComputerChoice (arr) {
     const randomSelection = Math.floor(Math.random() * arr.length); 
     return arr[randomSelection];
 }
-
-const picks = ["rock", "paper", "scissors"];
-// let computerChoice = getComputerChoice(picks);
 
 
 // button start game and rps seclection
@@ -51,12 +59,15 @@ function getHumanChoice (choice) {
         console.log(choice);
         // alert("Choice Accepted");
         document.getElementById("gameflow").textContent = "Choice Accepted";
-        return choice;
+
+        let computerChoice = getComputerChoice(picks);
+
+        playRound(choice, computerChoice);
 
     }
-   
 
-}
+    }
+
 
 // GAME PLAY LOGIC
 
@@ -66,7 +77,7 @@ function playRound(choice, computerChoice) {
     document.getElementById("gameflow").textContent = (`Round ${roundNumber}`);
 
     if (choice === computerChoice) {
-        document.getElementById("gameflow").textContent = (`Choice Accepted Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`)
+        document.getElementById("gameflow").textContent = (`Draw! Replay Round! Score You ${humanScore} - Computer ${computerScore}`)
         return;
     }
     // ROCK VS SCISSORS
@@ -75,10 +86,10 @@ function playRound(choice, computerChoice) {
         document.getElementById("gameflow").textContent = (`rock beats scissors. You get 1 point. Currnet Score: You ${humanScore} - Computer ${computerScore}`);
     } else if (choice === "scissors" && computerChoice === "rock") {
         computerScore++;
-             alertdocument.getElementById("gameflow").textContent = (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
+        document.getElementById("gameflow").textContent = (`rock beats scissors. Computer gets 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
 
     // SCISSORS VS PAPER
-    } else if (choice === "scissors" && computerChoice === "paper" ) {
+    } else if (choice === "scissors" && computerChoice === "paper") {
         humanScore++;
         document.getElementById("gameflow").textContent = (`scissors beats paper. You get 1 point Currnet Score: You ${humanScore} - Computer ${computerScore}`);
     } else if (choice === "paper" && computerChoice === "scissors") {
@@ -95,6 +106,10 @@ function playRound(choice, computerChoice) {
         
         }
 
+        if (checkGameWin()) {
+            return;
+        }
+
     }
 
     // Check win for each round
@@ -105,6 +120,8 @@ function playRound(choice, computerChoice) {
         (computerScore === 1 || computerScore < 5) 
         document.getElementById("gameflow").textContent = (`The computer wins Round: ${roundNumber}`);
         // return;
+
+      
     }
    
    
@@ -119,20 +136,22 @@ function playRound(choice, computerChoice) {
         return true;
     }
     return false;
+
+    
 }
 
     // while (humanScore < 5 && computerScore < 5) {
     // let choice = getHumanChoice();
     // let computerChoice = getComputerChoice(picks);
-    // // let roundNumber = roundTracker(5); 
+    // let roundNumber = roundTracker(5); 
 
     // playRound(choice, computerChoice);
     
-    console.log(choice);
-    console.log(computerChoice);
-    console.log(humanScore);
-    console.log(computerScore);
-    console.log(roundNumber);
+    // console.log(choice);
+    // console.log(computerChoice);
+    // console.log(humanScore);
+    // console.log(computerScore);
+    // console.log(roundNumber);
     
 
     // Check each round if game has been won
@@ -141,7 +160,7 @@ function playRound(choice, computerChoice) {
     // }
 
 
-    console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
+    // console.log(`End of round ${roundNumber}. Current Score: You ${humanScore} - Computer ${computerScore}`);
 
 
     
