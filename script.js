@@ -6,40 +6,42 @@ let humanScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
 
+const picks = ["rock", "paper", "scissors"];
+
 let startGame = document.createElement('button')
 startGame.textContent = 'start';
-document.body.appendChild(startGame);
+startGame.classList.add('button');
+document.getElementById("button-container").appendChild(startGame);
+
 
 startGame.addEventListener("click", function() {
     document.getElementById("gameflow").textContent = "Game Started!";
-
+    rpsButtons();
 });
 
-const picks = ["rock", "paper", "scissors"];
 
-function getComputerChoice (arr) {
-    const randomSelection = Math.floor(Math.random() * arr.length); 
-    return arr[randomSelection];
-}
+function rpsButtons() {
+document.getElementById("button-container").innerHTML = "";
 
 
 // button start game and rps seclection
 
 let rockOption = document.createElement('button');
 rockOption.textContent = 'rock';
-document.body.appendChild(rockOption);
+rockOption.classList.add('button');
+document.getElementById("button-container").appendChild(rockOption);
 
 let paperOption = document.createElement('button');
 paperOption.textContent = 'paper';
-document.body.appendChild(paperOption);
+paperOption.classList.add('button');
+document.getElementById("button-container").appendChild(paperOption);
 
 let scissorsOption = document.createElement('button');
 scissorsOption.textContent = 'scissors';
-document.body.appendChild(scissorsOption);
-
-rockOption.classList.add('button');
-paperOption.classList.add('button');
 scissorsOption.classList.add('button');
+document.getElementById("button-container").appendChild(scissorsOption);
+
+
 
 rockOption.addEventListener("click", function() { 
     getHumanChoice('rock');
@@ -53,6 +55,7 @@ scissorsOption.addEventListener("click", function() {
     getHumanChoice('scissors');
 });
 
+}
 
 function getHumanChoice (choice) {
     if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
@@ -66,6 +69,11 @@ function getHumanChoice (choice) {
 
     }
 
+    }
+
+    function getComputerChoice (arr) {
+        const randomSelection = Math.floor(Math.random() * arr.length); 
+        return arr[randomSelection];
     }
 
 

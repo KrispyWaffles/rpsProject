@@ -13,8 +13,22 @@ p {
     font-weight: bold;
 }
 
+.container {
+  height: 500px;
+  position: relative;
+
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
 .button {
-  display: inline-block;
+  margin: 10px;
   padding: 15px 25px;
   font-size: 24px;
   cursor: pointer;
@@ -28,4 +42,16 @@ p {
   box-shadow: 0 9px #999;
 }
 
+#button-container {
 
+  margin-top: -130%;
+}
+
+
+/* .button-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+} */
