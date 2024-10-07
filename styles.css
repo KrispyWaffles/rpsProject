@@ -23,7 +23,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 25vh;
   flex-direction: column;
 }
 
@@ -44,7 +44,15 @@ p {
 
 #button-container {
 
-  margin-top: -130%;
+  margin-top: 0%;
+
+  
+}
+
+#gameflow {
+  margin: 0;
+ 
+  
 }
 
 

@@ -8,19 +8,26 @@ let roundNumber = 0;
 
 const picks = ["rock", "paper", "scissors"];
 
+function createStartButton() {
+  const existingStartButton = document.getElementById('startButton');
+  if (existingStartButton) {
+  existingStartButton.remove();
+  
+}
+
 let startGame = document.createElement("button");
 startGame.textContent = "start";
 startGame.classList.add("button");
+startGame.id = 'startButton'; // Assigning an ID to track the startButton
 document.getElementById("button-container").appendChild(startGame);
 
 startGame.addEventListener("click", function () {
   document.getElementById("gameflow").textContent = "Game Started!";
-  rpsButtons();
-
   startGame.remove();
-
   rpsButtons();
 });
+
+}
 
 function rpsButtons() {
   document.getElementById("button-container").innerHTML = "";
@@ -164,16 +171,34 @@ function resetGame() {
   computerScore = 0;
   roundNumber = 0;
 
-  let newStartButton = document.createElement("button");
-   newStartButton.textContent = "start";
-   newStartButton.classList.add("button");
-   document.getElementById("button-container2").appendChild(newStartButton);
+  createStartButton();
 
-  newStartButton.addEventListener("click", function () {
-    document.getElementById("gameflow").textContent = "New Game Started!";
-    rpsButtons();
-  });
 }
+
+createStartButton();
+
+
+//   let newStartButton = document.createElement("button");
+//    newStartButton.textContent = "start";
+//    newStartButton.classList.add("button");
+//    document.getElementById("button-container2").appendChild(newStartButton);
+
+//   newStartButton.addEventListener("click", function () {
+//     document.getElementById("gameflow").textContent = "New Game Started!";
+//     rpsButtons();
+//   });
+// }
+
+//   let newStartButton = document.createElement("button");
+//    newStartButton.textContent = "start";
+//    newStartButton.classList.add("button");
+//    document.getElementById("button-container2").appendChild(newStartButton);
+
+//   newStartButton.addEventListener("click", function () {
+//     document.getElementById("gameflow").textContent = "New Game Started!";
+//     rpsButtons();
+//   });
+// }
 
 // while (humanScore < 5 && computerScore < 5) {
 // let choice = getHumanChoice();
